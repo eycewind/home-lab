@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  my-ubuntu-image:
+    image: ubuntu:20.04
+    command: tail -f /dev/null
+    networks:
+      - internal-1
+
+networks:
+  internal-1:
+    external: true

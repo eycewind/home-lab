@@ -1,0 +1,35 @@
+version: "3"
+
+services:
+  nextcloud-aio-mastercontainer:
+    container_name: nextcloud-aio-mastercontainer
+    image: nextcloud/all-in-one:latest
+    restart: always
+    # ports:
+    #   - "80:80"
+    #   - "8080:8080"
+    #   - "8443:8443"
+    volumes:
+      - nextcloud_aio_mastercontainer:/mnt/docker-aio-config
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    networks:
+      frontend:
+        ipv4_address: 10.10.0.8  # Assign a specific IP address
+
+volumes:
+  nextcloud_aio_mastercontainer:
+    external: true
+
+networks:
+  frontend:
+    external: true
+    ipam:
+      driver: default
+      config:
+        - subnet: "10.10.0.0/24"
+  # backend:
+  #   external: true
+  #   ipam:
+  #     driver: default
+  #     config:
+  #       - subnet: "10.20.0.0/24"

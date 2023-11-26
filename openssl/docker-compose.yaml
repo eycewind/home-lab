@@ -1,0 +1,18 @@
+version: '3.8'
+services:
+  openssh-container:
+    image: finalgene/openssh
+    user: "1000:1000"  # Replace these values with your user and group IDs
+    volumes:
+      - /home/ata/work/openssl:/app
+      - /home/ata/.ssh:/key
+    environment:
+      - SSH_DEPLOY_KEY=/key/id_rsa
+    command: sh -c "/app/generate_cert.sh"
+
+    networks:
+      - internal-1
+
+networks:
+  internal-1:
+    external: true

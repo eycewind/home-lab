@@ -1,0 +1,28 @@
+$TTL 2d
+
+$ORIGIN bas.it.
+
+@               IN      SOA     ns.bas.it. info.bast.it. (
+                                2023112800      ; serial
+                                12h             ; refresh
+                                15m             ; retry
+                                3w              ; expire
+                                2h              ; minimum ttl
+                                )
+
+                IN      NS      ns.bas.it.
+
+ns              IN      A       10.10.0.4
+
+; -- add dns records below
+
+; openssl         IN      A       10.0.0.2
+naio            IN      A       10.10.0.8
+portainer       IN      A       10.10.0.5
+npm             IN      A       10.10.0.6
+
+; -- demo servers
+; nextcloud       IN      A       10.10.0.2
+; nextcloud-db    IN      A       10.10.0.3
+; srv-demo-2      IN      A       10.0.0.14
+; *.srv-demo-2    IN      A       10.0.0.15
