@@ -1,0 +1,8 @@
+naio/certs
+naio/config
+naio/data
+naio/sites
+nginx-pm/data
+nginx-pm/letsencrypt
+nginx-pm/mysql_data
+nginx-web/bcube-website-2.0
