@@ -16,19 +16,20 @@ services:
       - ./records:/var/lib/bind
     restart: always
     user: "root:bind"  # Set the user and group ownership for the container
+    # network_mode: host
     networks:
       frontend:
-        ipv4_address: 10.10.0.4  # Assign a specific IP address
+      # ipv4_address: 10.10.0.4  # Assign a specific IP address
       # backend:
       #   ipv4_address: 10.20.0.4  # Assign a specific IP address
 
 networks:
   frontend:
     external: true
-    ipam:
-      driver: default
-      config:
-        - subnet: "10.10.0.0/24"
+#     ipam:
+#       driver: default
+#       config:
+#         - subnet: "10.10.0.0/24"
   # backend:
   #   external: true
   #   ipam:

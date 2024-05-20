@@ -12,14 +12,14 @@ $ORIGIN bas.it.
 
                 IN      NS      ns.bas.it.
 
-ns              IN      A       10.10.0.4
+ns              IN      A       192.168.100.8
 
 ; -- add dns records below
 
 ; openssl         IN      A       10.0.0.2
-naio            IN      A       10.10.0.8
-portainer       IN      A       10.10.0.5
-npm             IN      A       10.10.0.6
+; naio            IN      A       10.10.0.8
+; portainer       IN      A       10.10.0.5
+; npm             IN      A       10.10.0.6
 
 ; -- demo servers
 ; nextcloud       IN      A       10.10.0.2
